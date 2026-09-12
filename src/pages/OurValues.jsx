@@ -1,6 +1,7 @@
 import PageIntro from "../components/PageIntro";
 import Reveal from "../components/Reveal";
 import Button from "../components/Button";
+import { usePageTitle } from "../hooks/usePageTitle";
 
 function Icon({ children }) {
   return (
@@ -76,6 +77,7 @@ const VALUES = [
 ];
 
 export default function OurValues() {
+  usePageTitle("Contact Us");
   return (
     <div>
       <PageIntro

@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import Reveal from "../components/Reveal";
 import Button from "../components/Button";
+import { usePageTitle } from "../hooks/usePageTitle";
 
 function Icon({ children, className = "" }) {
   return (
@@ -145,6 +146,7 @@ const POPULAR_TOPICS = [
 ];
 
 export default function Faq() {
+  usePageTitle("Contact Us");
   const [category, setCategory] = useState("All");
   const [search, setSearch] = useState("");
   const [openQ, setOpenQ] = useState(null);

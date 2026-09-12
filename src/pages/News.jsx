@@ -3,6 +3,7 @@ import { useState } from "react";
 import Reveal from "../components/Reveal";
 import SectionHeading from "../components/SectionHeading";
 import Button from "../components/Button";
+import { usePageTitle } from "../hooks/usePageTitle";
 
 function Icon({ children }) {
   return (
@@ -86,6 +87,7 @@ const GALLERY = [
 ];
 
 export default function News() {
+  usePageTitle("Contact Us");
   const [email, setEmail] = useState("");
   const [subscribed, setSubscribed] = useState(false);
 

@@ -2,6 +2,7 @@ import PageIntro from "../components/PageIntro";
 import Reveal from "../components/Reveal";
 import SectionHeading from "../components/SectionHeading";
 import Button from "../components/Button";
+import { usePageTitle } from "../hooks/usePageTitle";
 
 const TEAM = [
   { title: "Chief Operating Officer", image: "/images/leadership/coo.jpg" },
@@ -28,6 +29,7 @@ const TEAM = [
 ];
 
 export default function OurLeadership() {
+  usePageTitle("Contact Us");
   return (
     <div>
       <PageIntro

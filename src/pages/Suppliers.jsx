@@ -2,6 +2,7 @@ import { useState } from "react";
 import Reveal from "../components/Reveal";
 import SectionHeading from "../components/SectionHeading";
 import Button from "../components/Button";
+import { usePageTitle } from "../hooks/usePageTitle";
 
 function Icon({ children }) {
   return (
@@ -125,6 +126,7 @@ const STEPS = [
 const CATEGORY_OPTIONS = SOURCE_CATEGORIES.map((c) => c.title);
 
 export default function Suppliers() {
+  usePageTitle("Contact Us");
   const [form, setForm] = useState({
     name: "",
     company: "",

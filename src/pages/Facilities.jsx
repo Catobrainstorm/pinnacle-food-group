@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import Reveal from "../components/Reveal";
 import Parallax from "../components/Parallax";
 import Button from "../components/Button";
+import { usePageTitle } from "../hooks/usePageTitle";
 
 function Icon({ children }) {
   return (
@@ -93,6 +94,7 @@ const FACILITIES = [
 ];
 
 export default function Facilities() {
+  usePageTitle("Contact Us");
   return (
     <div>
       {/* HEADER */}

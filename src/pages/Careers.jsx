@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import Reveal from "../components/Reveal";
 import Button from "../components/Button";
 import { JOBS } from "../data/jobs";
+import { usePageTitle } from "../hooks/usePageTitle";
 
 function Icon({ children, className = "" }) {
   return (
@@ -41,6 +42,7 @@ const BENEFITS = [
 ];
 
 export default function Careers() {
+  usePageTitle("Careers");
   return (
     <div>
       {/* HERO */}

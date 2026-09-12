@@ -1,6 +1,7 @@
 import Reveal from "../components/Reveal";
 import SectionHeading from "../components/SectionHeading";
 import Button from "../components/Button";
+import { usePageTitle } from "../hooks/usePageTitle";
 
 function Icon({ children }) {
   return (
@@ -193,6 +194,7 @@ const PRIORITIES = [
 ];
 
 export default function Sustainability() {
+  usePageTitle("Contact Us");
   return (
     <div>
       {/* HERO */}

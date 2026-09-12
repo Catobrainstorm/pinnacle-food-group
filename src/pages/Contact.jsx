@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import Reveal from "../components/Reveal";
 import Button from "../components/Button";
+import { usePageTitle } from "../hooks/usePageTitle";
 
 function Icon({ children, className = "" }) {
   return (
@@ -137,6 +138,7 @@ const LOCATIONS = [
 ];
 
 export default function Contact() {
+  usePageTitle("Contact Us");
   const [form, setForm] = useState({
     name: "",
     company: "",

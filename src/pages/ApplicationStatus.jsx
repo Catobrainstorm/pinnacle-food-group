@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import Reveal from "../components/Reveal";
 import Button from "../components/Button";
 import { getApplicationByReference } from "../lib/applications";
+import { usePageTitle } from "../hooks/usePageTitle";
 
 const STATUS_LABELS = {
   received: {
@@ -19,6 +20,7 @@ const STATUS_LABELS = {
 };
 
 export default function ApplicationStatus() {
+  usePageTitle("Check Application Status");
   const [refInput, setRefInput] = useState("");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");

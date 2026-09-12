@@ -2,6 +2,7 @@ import PageIntro from "../components/PageIntro";
 import Reveal from "../components/Reveal";
 import SectionHeading from "../components/SectionHeading";
 import Button from "../components/Button";
+import { usePageTitle } from "../hooks/usePageTitle";
 
 function Icon({ children }) {
   return (
@@ -59,6 +60,7 @@ const PRINCIPLES = [
 ];
 
 export default function OurApproach() {
+  usePageTitle("Contact Us");
   return (
     <div>
       <PageIntro

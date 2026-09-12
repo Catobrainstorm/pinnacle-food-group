@@ -1,6 +1,7 @@
 import Button from "../components/Button";
 import Reveal from "../components/Reveal";
 import SectionHeading from "../components/SectionHeading";
+import { usePageTitle } from "../hooks/usePageTitle";
 
 const AT_A_GLANCE = [
   "Modern Processing Facilities",
@@ -56,6 +57,7 @@ const WHY_US = [
 ];
 
 export default function Home() {
+  usePageTitle("Contact Us");
   return (
     <div>
       {/* HERO , untouched */}

@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import Reveal from "../components/Reveal";
 import Button from "../components/Button";
+import { usePageTitle } from "../hooks/usePageTitle";
 
 function Icon({ children, className = "" }) {
   return (
@@ -123,6 +124,7 @@ const DOCUMENTS = [
 ];
 
 export default function Legal() {
+  usePageTitle("Contact Us");
   useEffect(() => {
     const hash = window.location.hash?.replace("#", "");
     if (hash) {

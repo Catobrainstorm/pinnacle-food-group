@@ -1,6 +1,7 @@
 import PageIntro from "../components/PageIntro";
 import Reveal from "../components/Reveal";
 import Button from "../components/Button";
+import { usePageTitle } from "../hooks/usePageTitle";
 
 const STORY_STEPS = [
   {
@@ -181,6 +182,7 @@ function Icon({ children }) {
 }
 
 export default function AboutPinnacle() {
+  usePageTitle("Contact Us");
   return (
     <div>
       <PageIntro

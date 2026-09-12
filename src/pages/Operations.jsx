@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import Parallax from "../components/Parallax";
 import Reveal from "../components/Reveal";
 import Button from "../components/Button";
+import { usePageTitle } from "../hooks/usePageTitle";
 
 const AREAS = [
   {
@@ -32,6 +33,7 @@ const AREAS = [
 ];
 
 export default function Operations() {
+  usePageTitle("Contact Us");
   return (
     <div>
       {/* PARALLAX HEADER */}

@@ -4,6 +4,7 @@ import Reveal from "../components/Reveal";
 import Button from "../components/Button";
 import { getJobById } from "../data/jobs";
 import { submitApplication } from "../lib/applications";
+import { usePageTitle } from "../hooks/usePageTitle";
 
 const GENERAL_JOB = {
   id: "general",
@@ -59,6 +60,7 @@ const inputCls =
 export default function ApplyNow() {
   const { jobId } = useParams();
   const job = getJobById(jobId) || GENERAL_JOB;
+  usePageTitle(`Apply — ${job.title}`);
 
   const [step, setStep] = useState(0);
   const [form, setForm] = useState(emptyForm);
