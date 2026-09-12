@@ -2,7 +2,6 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import Reveal from "../components/Reveal";
 import Button from "../components/Button";
-import { usePageTitle } from "../hooks/usePageTitle";
 
 function Icon({ children, className = "" }) {
   return (
@@ -138,7 +137,6 @@ const LOCATIONS = [
 ];
 
 export default function Contact() {
-  usePageTitle("Contact Us");
   const [form, setForm] = useState({
     name: "",
     company: "",
@@ -406,12 +404,17 @@ export default function Contact() {
                     <circle cx="12" cy="10" r="2.5" />
                   </Icon>
                 </span>
-                <p className="text-cream/85 text-sm leading-relaxed">
+                <a
+                  href="https://www.google.com/maps/search/?api=1&query=1+Pinnacle+Way+Inverell+NSW+2360+Australia"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-cream/85 text-sm leading-relaxed hover:text-mustard-light transition-colors"
+                >
                   Pinnacle Food Group Pty Ltd
                   <br />1 Pinnacle Way
                   <br />
                   Inverell NSW 2360, Australia
-                </p>
+                </a>
               </div>
 
               <div className="flex items-start gap-4 mb-6">
@@ -475,7 +478,14 @@ export default function Contact() {
                   </span>
                   <div>
                     <p className="text-ink text-sm font-medium">{loc.name}</p>
-                    <p className="text-stone text-sm">{loc.address}</p>
+                    <a
+                      href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(loc.address)}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="block text-stone text-sm hover:text-forest hover:underline transition-colors"
+                    >
+                      {loc.address}
+                    </a>
                     <p className="text-stone text-sm">Ph: {loc.phone}</p>
                   </div>
                 </li>
@@ -530,6 +540,20 @@ export default function Contact() {
             </ul>
           </Reveal>
         </div>
+      </section>
+
+      {/* OFFICIAL SEAL — closing trust signal before the footer */}
+      <section className="py-16 bg-paper">
+        <Reveal className="max-w-7xl mx-auto px-5 sm:px-8 flex flex-col items-center text-center">
+          <img
+            src="/images/seal.jpg"
+            alt="Pinnacle Food Group Pty Ltd — Official Company Seal"
+            className="w-24 h-24 sm:w-28 sm:h-28 object-contain"
+          />
+          <p className="mt-4 text-xs tracking-widest uppercase text-stone">
+            Pinnacle Food Group Pty Ltd — Official Company Seal
+          </p>
+        </Reveal>
       </section>
     </div>
   );
