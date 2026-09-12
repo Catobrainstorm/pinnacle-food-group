@@ -1,5 +1,84 @@
 import { Link } from "react-router-dom";
 
+function SocialIcon({ children }) {
+  return (
+    <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+      {children}
+    </svg>
+  );
+}
+
+// TODO: replace these "#" placeholders with the client's real social page
+// URLs once they're provided — the icons are wired up and ready to go.
+const SOCIAL_LINKS = [
+  {
+    label: "Facebook",
+    href: "#",
+    icon: (
+      <SocialIcon>
+        <path d="M13.5 21v-7.5h2.5l.5-3h-3V8.5c0-.9.3-1.5 1.6-1.5H16.5V4.3c-.3 0-1.2-.1-2.3-.1-2.3 0-3.9 1.4-3.9 4V10.5H8v3h2.3V21h3.2Z" />
+      </SocialIcon>
+    ),
+  },
+  {
+    label: "Instagram",
+    href: "#",
+    icon: (
+      <SocialIcon>
+        <rect
+          x="3"
+          y="3"
+          width="18"
+          height="18"
+          rx="5"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="1.6"
+        />
+        <circle
+          cx="12"
+          cy="12"
+          r="4.2"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="1.6"
+        />
+        <circle cx="17.2" cy="6.8" r="1.1" />
+      </SocialIcon>
+    ),
+  },
+  {
+    label: "LinkedIn",
+    href: "#",
+    icon: (
+      <SocialIcon>
+        <rect x="3" y="9" width="3.2" height="11" />
+        <circle cx="4.6" cy="4.8" r="2" />
+        <path d="M10.2 9h3.1v1.6h.05c.43-.8 1.5-1.65 3.1-1.65 3.3 0 3.9 2.2 3.9 5V20h-3.2v-5.4c0-1.3 0-2.9-1.8-2.9s-2.05 1.4-2.05 2.8V20h-3.2Z" />
+      </SocialIcon>
+    ),
+  },
+  {
+    label: "YouTube",
+    href: "#",
+    icon: (
+      <SocialIcon>
+        <rect
+          x="2.5"
+          y="6"
+          width="19"
+          height="12"
+          rx="3"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="1.6"
+        />
+        <path d="M10.5 9.5v5l4.5-2.5Z" />
+      </SocialIcon>
+    ),
+  },
+];
+
 const COLS = [
   {
     heading: "Company",
@@ -75,6 +154,21 @@ export default function Footer() {
                   info@pinnaclefoodgroupau.com.au
                 </a>
               </p>
+            </div>
+
+            <div className="flex gap-4 mt-5">
+              {SOCIAL_LINKS.map((s) => (
+                <a
+                  key={s.label}
+                  href={s.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={s.label}
+                  className="text-cream/65 hover:text-mustard-light transition-colors"
+                >
+                  {s.icon}
+                </a>
+              ))}
             </div>
           </div>
 
